@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, Image } from 'react-native';
 import { object } from 'prop-types';
 
 import LoginForm from 'components/LoginForm';
@@ -16,9 +16,19 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container} testID={LOGIN_SCREEN}>
-      <Text style={styles.welcome}>{strings.SIGN_IN.title}</Text>
-      <LoginForm onSubmit={loginRequest} />
-      <Button testID="sign-up-button" title={strings.SIGN_UP.title} onPress={handleLogin} />
+      <View style={styles.containerLogo} testID={LOGIN_SCREEN}>
+        <Image
+          style={styles.logo}
+          source={require('media/images/logo.png')}
+        />
+      </View>
+      <LoginForm onSubmit={loginRequest}/>
+      <Button 
+        testID="sign-up-button"
+        title={strings.SIGN_UP.title}
+        onPress={handleLogin}
+        style={styles.button}
+      />
     </View>
   );
 };

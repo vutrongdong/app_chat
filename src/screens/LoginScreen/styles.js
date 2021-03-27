@@ -11,6 +11,20 @@ const styles = StyleSheet.create({
     margin: 10,
     textAlign: 'center',
   },
+  logo: {
+    width: 250,
+    height: 200,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  containerLogo: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  button: {
+    backgroundColor: 'blue',
+    color: 'red'
+  }
 });
 
 export default styles;

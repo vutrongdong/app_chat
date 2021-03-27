@@ -58,11 +58,15 @@ const LoginForm = ({ onSubmit }) => {
         keyboardType="email-address"
         autoCapitalize="none"
         testID="email-input"
+        style={styles.textInput}
+        placeholder="Enter Email..."
         {...inputProps(FIELDS.email)}
       />
       <Input
         label={strings.SIGN_IN.password}
         testID="password-input"
+        placeholder="Enter Password..."
+        style={styles.textInput}
         secureTextEntry
         {...inputProps(FIELDS.password)}
       />

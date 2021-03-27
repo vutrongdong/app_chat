@@ -6,11 +6,14 @@ const styles = StyleSheet.create({
     borderColor: 'lightblue',
     borderRadius: 5,
     borderWidth: 2,
-    marginTop: 10,
     marginBottom: 10
   },
-  input: {
-    marginTop: 10,
+  textInput: {
+    marginBottom: 10,
+    borderColor: "#474b4e",
+    borderWidth: 1,
+    borderRadius: 5,
+    paddingLeft: 10
   }
 });
 

@@ -19,7 +19,6 @@ const useForm = (
 
   const handleSubmit = useCallback(() => {
     const newErrors = validator(values) || {};
-    console.log(values)
 
     setTouched(mapValues(newErrors, () => true));
 

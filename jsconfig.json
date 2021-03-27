@@ -46,6 +46,15 @@
       ],
       "validations/*": [
         "src/validations/*"
+      ],
+      "media/*": [
+        "src/media/*"
+      ],
+      "apis/*": [
+        "src/apis/*"
+      ],
+      "sagas/*": [
+        "src/sagas/*"
       ]
     }
   }

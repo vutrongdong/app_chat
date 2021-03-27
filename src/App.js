@@ -1,22 +1,14 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { ActivityIndicator } from 'react-native';
-import { PersistGate } from 'redux-persist/integration/react';
-import httpClient from 'httpClient';
-import applyDefaultInterceptors from 'httpClient/applyDefaultInterceptors';
 
 import Navigation from 'navigators';
-import configureStore from 'store/configureStore';
+import configureStore from './store';
 
-const { store, persistor } = configureStore({});
-
-applyDefaultInterceptors(store, httpClient);
+const store = configureStore();
 
 const App = () => (
-  <Provider store={store}>
-    <PersistGate loading={<ActivityIndicator />} persistor={persistor}>
+  <Provider store={ store }>
       <Navigation />
-    </PersistGate>
   </Provider>
 );
 
