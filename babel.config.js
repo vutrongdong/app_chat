@@ -22,6 +22,7 @@ module.exports = {
           media: './src/media',
           apis: './src/apis',
           sagas: './src/sagas',
+          storages: './src/storages',
         },
       },
     ],

@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 
-const useSession = () =>
-  useSelector(({ session: { user, info } }) => ({
-    user: user || {},
-    info,
-  }));
+const useSession = () => {
+  const authReducer = useSelector(state => state.authReducer);
+
+  return authReducer.user;
+};
 
 export default useSession;

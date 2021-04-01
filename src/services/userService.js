@@ -10,7 +10,6 @@ class UserService {
   }
 
   signUp(user) {
-    console.log('test1234', user)
     return httpClient.post('/users', user);
   }
 }

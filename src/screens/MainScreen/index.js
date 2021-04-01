@@ -12,9 +12,7 @@ const MainScreen = () => {
   const dispatch = useDispatch();
   const logoutRequest = useCallback(() => dispatch(logout()), [dispatch]);
 
-  const {
-    user: { email },
-  } = useSession();
+  const { email } = useSession();
 
   return (
     <View style={styles.container} testID={MAIN_SCREEN}>

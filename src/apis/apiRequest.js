@@ -1,12 +1,31 @@
 import axios from 'axios';
 import Config from 'react-native-config';
+import storage from 'storages';
 
-const apiRequest = (url, methodType, data = {}, multipart = false) => {
-    let headers;
-    headers = {};
+const apiRequest = async (url, methodType, data = {}, multipart = false) => {
+    // const loginState = await storage.load({
+    //     key: 'loginState', 
+    //     autoSync: true, 
+    //     syncInBackground: true,
+    //     syncParams: {
+    //         extraFetchOptions: {
+    //         // blahblah
+    //         },
+    //         someFlag: true
+    //     }
+    // });
+
+    const loginState = null;
+
+    let headers = {};
+    
     if (multipart) {
         var boundary = "xxxxxxxxxx";
         headers['content-type'] = 'multipart/form-data; boundary=' + boundary;
+    }
+    
+    if (loginState && loginState.token) {
+        headers['Authorization'] = 'Bearer ' + loginState.token;
     }
 
     return new Promise(
@@ -17,12 +36,11 @@ const apiRequest = (url, methodType, data = {}, multipart = false) => {
                 data: data,
                 headers: headers
             })
-            .then(response => {
+            .then(async response => {
                 resolve(response.data);
             })
             .catch(function (error) {
-                console.log(error)
-                reject(error.response.data);
+                reject(error);
             });
         });
 };

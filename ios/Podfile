@@ -28,6 +28,8 @@ target 'ReactNativeBase' do
   # Pods for ReactNativeBase
   base_pods
 
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
+
   target 'ReactNativeBaseTests' do
     inherit! :complete
     # Pods for testing

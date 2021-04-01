@@ -17,19 +17,15 @@ export const loginSuccess = (params) => ({
   }
 });
 
-export const loginError = (params) => ({
+export const loginError = (error) => ({
   type: authConst.LOGIN_ERROR,
   payload: {
-    params
+    error
   }
 });
 
-export const logout = createThunk('LOGOUT', async () => {
-  try {
-    await userService.logout();
-  } catch ({ response }) {
-    throw parseError(response);
-  }
+export const logout = () => ({
+  type: authConst.LOGOUT
 });
 
 export const signUp = createThunk('SIGNUP', async user => {
@@ -43,6 +39,5 @@ export const signUp = createThunk('SIGNUP', async user => {
 
 export const updateSession = createAction('UPDATE_SESSION');
 
-// export const { success: loginSuccess } = login;
 export const { success: signUpSuccess } = signUp;
 export const { success: logoutSuccess } = logout;

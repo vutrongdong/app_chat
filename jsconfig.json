@@ -55,6 +55,9 @@
       ],
       "sagas/*": [
         "src/sagas/*"
+      ],
+      "storages/*": [
+        "src/storages/*"
       ]
     }
   }

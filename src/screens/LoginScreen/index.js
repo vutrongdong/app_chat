@@ -23,7 +23,7 @@ const LoginScreen = ({ navigation }) => {
         />
       </View>
       <LoginForm onSubmit={loginRequest}/>
-      <Button 
+      <Button
         testID="sign-up-button"
         title={strings.SIGN_UP.title}
         onPress={handleLogin}
